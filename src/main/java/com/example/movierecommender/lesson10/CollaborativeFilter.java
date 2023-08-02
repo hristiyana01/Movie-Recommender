@@ -1,5 +1,6 @@
-package com.example.movierecommender.lesson8;
+package com.example.movierecommender.lesson10;
 
+import com.example.movierecommender.lesson11.Filter;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;

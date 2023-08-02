@@ -1,7 +1,11 @@
-package com.example.movierecommender.lesson7;
+package com.example.movierecommender.lesson11;
 
 
-import com.example.movierecommender.lesson8.Filter;
+import com.example.movierecommender.lesson11.Filter;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -9,8 +13,9 @@ import org.springframework.stereotype.Component;
 @Component
 //@Qualifier("CBF")
 public class RecommenderImplementation {
-    //find similar movies using a content-based filter and then return the results.
-    //Filter is a dependency of RecommenderImplementation
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Qualifier("CF")
     private Filter filter;
     @Autowired
@@ -31,4 +36,18 @@ public class RecommenderImplementation {
         return results;
     }
 
+    public void setFilter(Filter filter) {
+        logger.info("In RecommenderImplementation setter method..dependency injection");
+        this.filter = filter;
+    }
+    @PostConstruct
+    public void postConstruct() {
+        logger.info("In RecommenderImplementation postConstruct method");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        //cleanup code
+        logger.info("In RecommenderImplementation preDestroy method");
+    }
 }
