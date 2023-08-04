@@ -1,4 +1,4 @@
-package com.example.movierecommender.lesson13;
+package com.example.movierecommender.lesson14;
 
 import com.example.movierecommender.lesson11.Movie;
 import jakarta.annotation.PostConstruct;
@@ -10,13 +10,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import javax.inject.Named;
 
-@Named
-@Qualifier("CBF")
+
 public class ContentBasedFilter implements Filter {
     private static int instances = 0;
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
     private Movie movie;
 
     @PostConstruct

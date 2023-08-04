@@ -1,7 +1,7 @@
 package com.example.movierecommender.lesson7;
 
 
-import com.example.movierecommender.lesson13.Filter;
+import com.example.movierecommender.lesson14.Filter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

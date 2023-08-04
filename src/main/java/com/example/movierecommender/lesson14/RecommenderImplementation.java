@@ -1,4 +1,4 @@
-package com.example.movierecommender.lesson13;
+package com.example.movierecommender.lesson14;
 
 
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -6,18 +6,22 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-@Named
-@Qualifier("CBF")
+
 public class RecommenderImplementation {
 
    // private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Inject
-    @Qualifier("CF")
+//    @Inject
+//    @Qualifier("CF")
     private Filter filter;
 
     public Filter getFilter() {
         return filter;
+    }
+
+    public void setFilter(Filter filter)
+    {
+        this.filter = filter;
     }
 
     //use a filter to find recommendations
@@ -32,11 +36,9 @@ public class RecommenderImplementation {
     }
 
   //  @Autowired
-//    public RecommenderImplementation(@Qualifier("collaborativeFilter") Filter filter) {
-//        this.filter = filter;
-//        System.out.println("Constructor invoked...");
-//
-//    }
+    public RecommenderImplementation(Filter filter) {
+        this.filter = filter;
+    }
 //    public RecommenderImplementation(ContentBasedFilter contentBasedFilter) {
 //    }
 
