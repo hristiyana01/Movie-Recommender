@@ -1,12 +1,12 @@
-package com.example.movierecommender.lesson10;
+package com.example.movierecommender.lesson13;
 
-import com.example.movierecommender.lesson11.Filter;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
-@Component
+import javax.inject.Named;
+
+@Named
 @Qualifier("CF")
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class CollaborativeFilter implements Filter {

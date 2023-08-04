@@ -1,13 +1,17 @@
-package com.example.movierecommender.lesson11;
+package com.example.movierecommender.lesson13;
 
+import com.example.movierecommender.lesson11.Movie;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Qualifier;
 
-@Component
+import javax.inject.Named;
+
+@Named
+@Qualifier("CBF")
 public class ContentBasedFilter implements Filter {
     private static int instances = 0;
     private Logger logger = LoggerFactory.getLogger(this.getClass());

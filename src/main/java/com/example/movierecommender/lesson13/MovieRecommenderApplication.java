@@ -1,4 +1,4 @@
-package com.example.movierecommender.lesson11;
+package com.example.movierecommender.lesson13;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,11 +20,14 @@ public class MovieRecommenderApplication {
         RecommenderImplementation recommender = appContext.getBean(RecommenderImplementation.class);
 
         System.out.println(recommender);
+        System.out.println(recommender.getFilter());
 
-        Movie movie1 = appContext.getBean(Movie.class);
-        System.out.println(movie1);
-        Movie movie2 = appContext.getBean(Movie.class);
-        System.out.println(movie2);
+
+        //call method to get recommendations
+        String[] result = recommender.recommendMovies("Finding Dory");
+
+        //display results
+        System.out.println(Arrays.toString(result));
 
 
     }
