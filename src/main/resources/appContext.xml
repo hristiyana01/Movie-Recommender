@@ -14,5 +14,6 @@
 
       <bean id="recommenderImplementation"
             class="com.example.movierecommender.lesson14.RecommenderImplementation">
+            <constructor-arg ref="collaborativeFilter"/>
       </bean>
 </beans>
