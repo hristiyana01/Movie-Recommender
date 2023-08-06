@@ -1,16 +1,12 @@
 package com.example.movierecommender.lesson7;
 
 
-import com.example.movierecommender.lesson14.Filter;
+import com.example.movierecommender.lesson15.Filter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 
-@Component
-//@Qualifier("CBF")
 public class RecommenderImplementation2 {
-    //find similar movies using a content-based filter and then return the results.
-    //Filter is a dependency of RecommenderImplementation
+
     @Autowired
     @Qualifier("CF")
     private Filter filter;

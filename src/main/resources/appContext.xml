@@ -1,19 +1,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-<!-- bean definitions -->
-      <bean id="contentBasedFilter"
-            class="com.example.movierecommender.lesson14.ContentBasedFilter">
-      </bean>
+      <!-- enable detection of dependency injection annotations -->
+      <context:annotation-config />
 
-      <bean id="collaborativeFilter"
-            class="com.example.movierecommender.lesson14.CollaborativeFilter">
-      </bean>
+      <!-- bean definitions -->
+      <bean id="filter"
+            class="com.example.movierecommender.lesson15.ContentBasedFilter" />
+
+      <bean id="filter1"
+            class="com.example.movierecommender.lesson15.CollaborativeFilter"/>
 
       <bean id="recommenderImplementation"
-            class="com.example.movierecommender.lesson14.RecommenderImplementation">
-            <constructor-arg ref="collaborativeFilter"/>
-      </bean>
+            class="com.example.movierecommender.lesson15.RecommenderImplementation"/>
 </beans>
